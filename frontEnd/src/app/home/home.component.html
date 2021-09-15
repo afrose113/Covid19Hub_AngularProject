@@ -1,0 +1,191 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+  <div class="container-fluid">
+    <header class="masthead">
+      <div class="na">
+        <div class="container h-100">
+          <div class="row h-50 align-items-center">
+            <div class="col-12 text-center">
+              <h1 class="text-bold text-center">
+                Welcome to Covid Relief Hub!
+              </h1>
+              <p class="lead text-bold">Let's Fight this Battle</p>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="text-center">
+                  Country : {{ product.data[1].location }}
+                </h3>
+              </div>
+              <div class="col-md-6">
+                <h3 class="text-center">Date : {{ product.dt }}</h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 col-md-4">
+              <div class="card">
+                <!-- <div class="card-header">Polar Area chart</div> -->
+                <div class="card-body text-center height-property">
+                  <div style="height: 300px">
+                    <h3 class="text-center m-b-10" style="color: red">
+                      Active Cases
+                    </h3>
+                    <h3 class="text-bold">{{ product.data[1].active }}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-md-4">
+              <div class="card">
+                <div class="card-body text-center height-property">
+                  <div style="height: 300px">
+                    <h3 class="text-center m-b-10" style="color: green">
+                      Recovered
+                    </h3>
+                    <h3 class="text-bold">{{ product.data[1].recovered }}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-md-4">
+              <div class="card">
+                <div class="card-body text-center height-property">
+                  <div style="height: 300px">
+                    <h3 class="text-center m-b-10" style="color: red">
+                      Deceased
+                    </h3>
+                    <h3 class="text-bold">{{ product.data[1].deaths }}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div></div>
+          </div>
+          <div class="row">
+            <div class="container cd">
+              <div class="center">
+                <button class="btn btn-success" (click)="onDonate()">
+                  Donate Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>
+<div class="card-columns mt-2">
+  <div class="card">
+    <img
+      class="card-img-top"
+      src="https://www.avert.org/sites/default/files/styles/responsive_articlecustom_user_desktop_1x/public/hand%20sanitiser.jpg?itok=vx0mMwpW&timestamp=1584726148"
+      alt="Card image cap"
+    />
+    <div class="card-body">
+      <a class="card-title text-success" routerLink="/blog"
+        >About coronavirus (COVID-19)</a
+      >
+      <p class="card-text">
+        Learn about the new coronavirus - how it's spread, how to prevent it and
+        symptoms.
+      </p>
+    </div>
+  </div>
+  <div class="card p-3">
+    <img
+      class="card-img-top"
+      src="https://www.kff.org/wp-content/uploads/2020/05/FEATURE-COVID-Quiz_1.png"
+      alt="Card image cap"
+    />
+    <div class="card-body">
+      <a class="card-title text-success" routerLink="/blog"
+        >Take our COVID-19 quiz!</a
+      >
+      <p class="card-text">
+        Take our quiz to see if you have got all the right information about
+        COVID-19 and how to look after your health.
+      </p>
+    </div>
+  </div>
+  <div class="card">
+    <img
+      class="card-img-top"
+      src="https://www.avert.org/sites/default/files/styles/responsive_articlecustom_user_desktop_1x/public/COVID%20FAQs.jpg?itok=zGzHr_Z2&timestamp=1587120174"
+      alt="Card image cap"
+    />
+    <div class="card-body">
+      <a class="card-title text-success" routerLink="/blog"
+        >Coronavirus (COVID-19) FAQs</a
+      >
+      <p class="card-text">
+        Find answers to some of the most common questions about COVID-19 and
+        what it means for people living with HIV.
+      </p>
+    </div>
+  </div>
+  <div class="card bg-info text-white text-center p-3">
+    <blockquote class="blockquote mb-0">
+      <p>
+        Salute to Front-End Warriors and Doctors Who are risking their lives to
+        protect people
+      </p>
+      <footer class="blockquote-footer">
+        <small>
+          <cite title="Source Title"> "Stay Home Stay Safe"</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </div>
+  <div class="card text-center">
+    <div class="card-body">
+      <p class="card-title text-primary">Help Us</p>
+      <p class="card-text">
+        Help us empower people through knowledge and achieve a world that is
+        free of HIV. Every £1 you donate to Avert, helps us achieve that vision.
+      </p>
+      <button class="btn btn-success" (click)="onDonate()">Donate Now</button>
+    </div>
+  </div>
+  <div class="card">
+    <img
+      class="card-img"
+      src="https://www.festo.com/group/en/repo/assets/319718852-corona-1532x900-adobestock.jpg"
+      alt="Card image"
+    />
+  </div>
+  <div class="card p-3">
+    <img
+      class="card-img-top"
+      src="https://www.avert.org/sites/default/files/styles/responsive_articlecustom_user_desktop_1x/public/COVID-19%20myths.png?itok=F_UHBbVl&timestamp=1587129828"
+      alt="Card image cap"
+    />
+    <div class="card-body">
+      <a class="card-title text-success" routerLink="/blog"
+        >COVID-19: Myths and facts</a
+      >
+      <p class="card-text">
+        Putting the record straight on common COVID-19 myths and misinformation.
+      </p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <a class="card-title text-success" routerLink="/blog"
+        >How can I prevent COVID-19?</a
+      >
+      <p class="card-text">
+        The best ways to prevent coronavirus (COVID-19) are through social
+        distancing and wearing a face mask when you are around others. Follow
+        your local government's advice for further precautions where necessary.
+      </p>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

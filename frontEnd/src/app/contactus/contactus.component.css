@@ -1,0 +1,136 @@
+#n {
+  border-radius: 10px;
+}
+#p {
+  padding: 5px;
+  background-color: rgb(182, 228, 235);
+  border-radius: 5px;
+}
+
+.cdd {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  background: #027676;
+  padding: 1% 2% 2% 5%;
+}
+
+.cdd .box {
+  position: relative;
+  width: calc(400px - 30px);
+  height: calc(300px - 30px);
+  background: #000;
+  float: left;
+  margin: 15px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.cdd .box .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: 0.5s;
+  z-index: 1;
+}
+.cdd .box:hover .icon {
+  top: 20px;
+  left: calc(50% - 40px);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.cdd .box .icon .fa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  transition: 0.5s;
+  color: #fff;
+}
+.cdd .box:hover .icon .fa {
+  font-size: 40px;
+}
+
+.cdd .box .content {
+  position: absolute;
+  top: 100%;
+  height: calc(100% - 100px);
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: 0.5s;
+  opacity: 0;
+}
+.cdd .box:hover .content {
+  top: 100px;
+  opacity: 1;
+}
+.cdd .box .content h3 {
+  margin: 0 0 10px;
+  padding: 0;
+  color: #fff;
+  font-size: 24px;
+}
+.cdd .box .content p {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.cdd .box:nth-child(1) .icon {
+  background: #319635;
+}
+.cdd .box:nth-child(1) {
+  background: #4caf50;
+}
+
+.cdd .box:nth-child(2) .icon {
+  background: #d03852;
+}
+.cdd .box:nth-child(1) {
+  background: #f54967;
+}
+
+.cdd .box:nth-child(3) .icon {
+  background: #23798e;
+}
+.cdd .box:nth-child(1) {
+  background: #328fa5;
+}
+
+.cgg {
+  border: none;
+  border-radius: 0;
+  width: 550px;
+  box-shadow: 0 0 5px rgba(187, 76, 76, 0.1);
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+.form-control {
+  border: solid rgb(161, 159, 159);
+}
+.form-control:focus {
+  border: 1.5px solid #adb5bd;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: rgb(182, 228, 235);
+  letter-spacing: 1px;
+  color: #000;
+}
+
+#p {
+  padding: 5px;
+  background-color: rgb(182, 228, 235);
+  border-radius: 5px;
+}
+
+.btn-block:hover {
+  background: #027676;
+}

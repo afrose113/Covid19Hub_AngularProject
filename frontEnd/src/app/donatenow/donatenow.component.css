@@ -1,0 +1,63 @@
+@media (min-width: 576px) {
+  .jumbotron {
+    padding: 2rem 2rem !important;
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 280px;
+  height: 320px;
+  background: #d7385e;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 10%;
+}
+
+.card .content p:nth-child(1) {
+  margin: 20px;
+  font-size: 1.1rem;
+}
+
+.card .content p:nth-child(2) {
+  margin: 0 0 0 100px;
+  font-size: 1.1rem;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  bottom: -55px;
+  transform: rotate(-10deg);
+  width: 120%;
+  height: 80px;
+  /* background: #edc988; */
+}
+
+.content {
+  transform: translateY(-15px);
+}
+
+i:nth-child(1) {
+  position: absolute;
+  bottom: 25px;
+  right: -10px;
+}
+
+i:nth-child(2) {
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+}
+
+.backgroundcolor {
+  background-color: #027676;
+}

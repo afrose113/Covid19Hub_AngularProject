@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<div class="backgroundd">
+  <!-- <div class="container"> -->
+  <h1 class="text-center headerr">Covid Heros</h1>
+  <!-- </div> -->
+  <div class="container">
+    <table border="1">
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>PhoneNo</th>
+        <th>State</th>
+        <th>Country</th>
+        <th>Amount</th>
+      </tr>
+      <tr *ngFor="let apicall of apicalls">
+        <td>{{ apicall.fname }}</td>
+        <td>{{ apicall.add }}</td>
+        <td>{{ apicall.phNo }}</td>
+        <td>{{ apicall.state }}</td>
+        <td>{{ apicall.country }}</td>
+        <td>{{ apicall.amount }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <app-footer></app-footer>
+</div>

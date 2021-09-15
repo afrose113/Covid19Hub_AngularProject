@@ -1,0 +1,161 @@
+<app-navbar></app-navbar>
+<div class="backgroundcolor">
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="text-center">Donate Now for Covid Relief</h1>
+      <p class="text-center">Let's Help Each other fight this battle!</p>
+    </div>
+  </div>
+
+  <div class="container text-left bg-white rounded shadow py-3">
+    <div class="row">
+      <div class="col-md-8">
+        <form #myForm="ngForm">
+          <div class="form-row">
+            <div class="col form-group">
+              <label>Name </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder=""
+                name="fname"
+                [(ngModel)]="registerObj.fname"
+                required
+                fname
+                #fname="ngModel"
+              />
+              <!-- <small *ngIf="fname">Your Name is {{fname}}</small> -->
+              <small class="text-danger" *ngIf="!fname.valid && fname.touched"
+                >Please Enter Valid First Name</small
+              >
+            </div>
+            <div class="col form-group">
+              <label>Address</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder=" "
+                name="add"
+                [(ngModel)]="registerObj.add"
+                required
+                add
+                #add="ngModel"
+              />
+              <!-- <small *ngIf="add">your entered address is {{add}}</small> -->
+              <small class="text-danger" *ngIf="!add.valid && add.touched"
+                >Please Enter Valid address</small
+              >
+            </div>
+          </div>
+          <div class="col form-group">
+            <label>Phone Number</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder=" "
+              name="phNo"
+              [(ngModel)]="registerObj.phNo"
+              required
+              phNo
+              #phNo="ngModel"
+            />
+            <!-- <small *ngIf="phNo">Your Phone Number is {{phNo}}</small> -->
+            <small class="text-danger" *ngIf="!phNo.valid && phNo.touched"
+              >Please Enter Valid Phone Number</small
+            >
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>State</label>
+              <input
+                type="text"
+                class="form-control"
+                name="state"
+                [(ngModel)]="registerObj.state"
+                required
+                state
+                #state="ngModel"
+              />
+              <small class="text-danger" *ngIf="!state.valid && state.touched"
+                >Please Enter Valid State</small
+              >
+            </div>
+            <div class="form-group col-md-6">
+              <label>Country</label>
+              <select
+                id="inputState"
+                class="form-control"
+                name="country"
+                [(ngModel)]="registerObj.country"
+                required
+                country
+                #country="ngModel"
+              >
+                <option>Choose...</option>
+                <option>Uzbekistan</option>
+                <option>Russia</option>
+                <option>United States</option>
+                <option>India</option>
+                <option>Afganistan</option>
+              </select>
+              <small
+                class="text-danger"
+                *ngIf="!country.valid && country.touched"
+                >Please Select Valid Country
+              </small>
+            </div>
+          </div>
+
+          <div class="col form-group">
+            <label>Amount</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder=" "
+              name="amount"
+              [(ngModel)]="registerObj.amount"
+              required
+              amount
+              #amount="ngModel"
+            />
+            <!-- <small *ngIf="amount">Your entered amount is {{amount}}</small> -->
+            <small class="text-danger" *ngIf="!amount.valid && amount.touched"
+              >Please Enter Valid Amount</small
+            >
+          </div>
+          <br />
+          <div class="form-group">
+            <button
+              type="submit"
+              class="btn btn-success btn-block"
+              [disabled]="!myForm.valid"
+              (click)="sendData()"
+            >
+              Donate Now
+            </button>
+
+            <!-- <button class="btn btn-second btn-link" (click)="resetForm(myForm)">Reset Form</button> -->
+          </div>
+          <div class="form-group"></div>
+        </form>
+      </div>
+      <div class="col-md-4">
+        <div class="main">
+          <div class="card">
+            <!-- <i class="fas fa-quote-left fa-3x"></i> -->
+            <i class="fas fa-quote-right fa-3x"></i>
+            <div class="content">
+              <P>
+                "Making a donation is the ultimate sign of solidarity. Actions
+                speak louder than words."
+              </P>
+              <P>- Ibrahim Hooper </P>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

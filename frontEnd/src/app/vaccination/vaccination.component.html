@@ -1,0 +1,204 @@
+<app-navbar></app-navbar>
+<div class="backgroundcolor">
+  <div class="container-fluid">
+    <h5 class="alert alert-secondary text-center">
+      Welcome to Vaccination Drive
+    </h5>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="mb-3">
+            <div class="card border-light mt-5" style="width: 50%">
+              <div style="padding: 5%">
+                <h5 class="jumbotron">Search Contact Details Based on State</h5>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item border-light">
+                  <form #myForm="ngForm" (ngSubmit)="submit(myForm)">
+                    <!-- Name Input Tag -->
+                    <div class="form-group">
+                      <label>State Name</label>
+                      <select
+                        name="state"
+                        [(ngModel)]="model.state"
+                        class="form-control"
+                        #state="ngModel"
+                        required
+                      >
+                        <option [ngValue]="null" class="alert-danger">
+                          Select State
+                        </option>
+                        <option *ngFor="let c of contact">{{ c.loc }}</option>
+                      </select>
+
+                      <!--Name Error Messages-->
+                      <div
+                        *ngIf="state.invalid && (state.dirty || state.touched)"
+                        class="alert alert-danger"
+                      >
+                        <div
+                          class="text-danger mt-1"
+                          *ngIf="state.errors && state.invalid"
+                        >
+                          <div *ngIf="state.errors.required">
+                            State Name Must Be Selected
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <button
+                        class="btn btn-primary btn-block"
+                        [disabled]="!myForm"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </form>
+                </li>
+                <li class="list-group-item border-light">
+                  State Help Line Number:&nbsp;&nbsp;&nbsp;{{ regContact }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 shadow-lg p-3 mb-5 bg-white rounded">
+          <div class="jumbotron">
+            <h3 class="text-center">Book Your Vaccination</h3>
+          </div>
+          <form>
+            <div class="form-group">
+              <label>Name</label>
+              <input
+                type="age"
+                class="form-control"
+                placeholder=""
+                name="uname"
+                ngModel
+                required
+                uname
+                #uname="ngModel"
+              />
+              <small class="text-danger" *ngIf="!uname.valid && uname.touched"
+                >Please Enter Valid Name</small
+              >
+            </div>
+            <div class="form-group">
+              <label>Age</label>
+              <input
+                type="age"
+                class="form-control"
+                placeholder=""
+                name="age"
+                ngModel
+                required
+                age
+                #age="ngModel"
+              />
+              <small class="text-danger" *ngIf="!age.valid && age.touched"
+                >Please Enter Valid Age</small
+              >
+            </div>
+            <!-- form-group end.// -->
+            <div class="form-group">
+              <label>Address</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder=""
+                name="addr"
+                ngModel
+                required
+                addr
+                #addr="ngModel"
+              />
+              <small class="text-danger" *ngIf="!addr.valid && addr.touched"
+                >Please Enter Valid Address</small
+              >
+            </div>
+            <!-- form-group end.// -->
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>Aadhar Number</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder=""
+                  name="addnum"
+                  ngModel
+                  required
+                  addnum
+                  #addnum="ngModel"
+                />
+                <small
+                  class="text-danger"
+                  *ngIf="!addnum.valid && addnum.touched"
+                  >Please Enter Valid Aadhar Number</small
+                >
+              </div>
+              <!-- form-group end.// -->
+              <div class="form-group col-md-6">
+                <label>Vaccine</label>
+                <select
+                  id="inputState"
+                  class="form-control"
+                  name="country"
+                  [ngModel]="default"
+                  required
+                  vaccine
+                  #vaccine="ngModel"
+                >
+                  <option>Choose...</option>
+                  <option>Covidshield</option>
+                  <option>Covaxin</option>
+                  <option>Pfizer</option>
+                </select>
+                <!-- <small class="text-danger" *ngIf="!vaccine.valid && vaccine.touched ">Please Choose Vaccine</small> -->
+              </div>
+              <!-- form-group end.// -->
+            </div>
+            <!-- form-row.// -->
+
+            <div class="form-group">
+              <button
+                type="submit"
+                class="btn btn-primary btn-block"
+                (click)="submitData()"
+              >
+                Register
+              </button>
+            </div>
+            <!-- form-group// -->
+          </form>
+        </div>
+
+        <div class="col-md-4" style="margin-top: 4%">
+          <div class="card border-light" style="width: 50%; padding: 2%">
+            <div>
+              <h5 class="jumbotron">Primary Contact Details</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item border-light">
+                Number:&nbsp;&nbsp;&nbsp;{{ vD.data.contacts.primary.number }}
+              </li>
+              <li class="list-group-item border-light">
+                Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{
+                  vD.data.contacts.primary.email
+                }}
+              </li>
+              <li class="list-group-item border-light">
+                Twitter:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{
+                  vD.data.contacts.primary.twitter
+                }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

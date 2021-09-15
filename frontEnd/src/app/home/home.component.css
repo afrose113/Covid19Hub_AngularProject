@@ -1,0 +1,50 @@
+.centerr {
+  margin: auto;
+}
+
+.masthead {
+  height: 100%;
+  min-height: 500px;
+  background-image: url("https://healthblog.uofmhealth.org/sites/consumer/files/2021-01/white_woman_getting_vaccine.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.na{
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(8px); 
+}
+.m-b-10 {
+  margin-bottom: 20px !important;
+}
+
+.height-property {
+  height: 200px;
+}
+
+.cd {
+  height: 100px;
+  position: relative;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
+  width: 100%;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  margin-right: auto;
+  margin-left: auto;
+}
